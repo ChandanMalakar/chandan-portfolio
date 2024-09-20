@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a2e;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Change from height to min-height to allow scrolling */
+  background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 80px; /* Increased padding for more spacing */
+  z-index: 1000; /* Ensure navbar is above header */
+}
+
+nav .logo {
+  font-size: 2rem; /* Slightly larger logo */
+  color: #fff;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px; /* Increased gap for more space between nav items */
+}
+
+nav ul li a {
+  color: #fff; /* Ensure the text color is white */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500;
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+  color: #00d4ff; /* Hover color for a nice effect */
+}
+
+nav ul li a:visited {
+  color: #fff; /* Ensure visited links stay white and do not turn purple */
+}
+
+
+header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 250px; /* Increased height for more space */
+  justify-content: center;
+  margin-top: 88px; /* Adjusted for nav height */
+  align-items: center;
+  padding: 20px;
+  z-index: 1; /* Ensure header is below navbar */
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark film */
+  z-index: -1; /* Place behind the text */
+}
+
+.profile-info {
+  text-align: center;
+  position: relative; /* Ensure text remains above the film */
+  z-index: 1;
+}
+
+.profile-info h1 {
+  font-size: 3rem; /* Increased font size for the name */
+  margin-bottom: 15px;
+}
+
+.profile-info p {
+  margin-bottom: 10px; /* More space between paragraphs */
+}
+
+.heading {
+  width: 100%;
+  background-color: #2e2e4e;
+  padding: 30px 80px; /* Increased padding for more space */
+  text-align: left;
+}
+
+main {
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 80px; /* Increased padding on left and right for more space */
+  width: 100%;
+  min-height: 1200px;
+  padding-bottom: 100px;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px; /* Reduced gap between project containers */
+}
+
+.project-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s, box-shadow 0.5s;
+  width: 28%; /* Slightly reduced width to make it more compact */
+  height: 430px; /* Slightly reduced height */
+  text-align: center;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange sections vertically */
+  justify-content: space-between; /* Distribute space between sections */
+}
+
+.project-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.project-container img {
+  width: 100%;    /* Set the image to take full width */
+  height: 150px;  /* Set a fixed height to maintain consistency */
+  object-fit: cover;  /* Ensures the image scales properly */
+  border-radius: 10px;  /* Optional: rounds the image's corners */
+}
+
+.project-container h3 {
+  flex-grow: 1;
+  margin: 10px 0;
+}
+
+.project-container p {
+  flex-grow: 1;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+
+/* Read More Button */
+.project-container a {
+  flex-grow: 1;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  background-color: rgba(0, 212, 255, 0.1);
+  padding: 10px;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.read-more-btn{
+  padding: 20px;
+}
+
+.project-container a:hover {
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.6);
+  background-color: #10d4ff;
+}
+
+
+
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px; /* Increased padding for more space */
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  text-align: left;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Increased gap between footer links */
+}
+
+footer li a {
+  color: #fff;
+  text-decoration: none;
+}

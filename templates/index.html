@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='images/2.png') }}" type="image/x-icon">
+</head>
+<body>
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <ul>
+      <li><a href="/profile">Home</a></li>
+      <li><a href="/aboutme">About Me</a></li>
+      <li><a href="/project">Projects</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="profile-info">
+      <h1>Chandan Malakar</h1>
+      <p>Aspiring Data Scientist</p>
+      <p>Ever since I delved into the world of data, I realized how much I enjoy making sense of the numbers, patterns, and trends that often go unnoticed. Currently, I am learning machine learning, a key step toward my goal of becoming a data scientist in the near future.<br>
+        
+        My journey into data science has taught me that “data is the new oil, and it's how we refine it that truly matters.” This mindset keeps me motivated to learn and explore more ways to work with data.<br>
+      </p>
+    </div>
+  </header>
+<div class ="heading"><h2>Featured Projects</h2></div>
+  <main>
+  <section class="projects">
+    <!-- First Row of Project Containers -->
+    <div class="project-container">
+      <img src="{{ url_for('static', filename='images/ner.jpg') }}" alt="Project 1">
+      <h3>NER (Named Entity Recognition)</h3>
+      <p>NER is a subtask of NLP that aims to identify and classify named entities in text. These entities can be people, organizations, locations, dates, times, etc.<br></p>
+      <a href="/ner" class="read-more-btn">Read More</a>
+    </div>
+    <div class="project-container">
+      <img src="{{ url_for('static', filename='images/sen.jpg') }}" alt="Project 2">
+      <h3>Sentimental Analysis</h3>
+      <p>Sentiment analysis is a technique used to determine the overall attitude or emotion expressed in a given text. It helps to classify text as positive, negative, or neutral.
+        <br></p>
+        <a href="project2.html" class="read-more-btn">Read More</a>
+    </div>
+    <div class="project-container">
+      <img src="{{ url_for('static', filename='images/loan-eligibility.jpg') }}" alt="Project 3">
+      <h3>Loan Eligibility Prediction</h3>
+      <p>Loan eligibility prediction is a ML technique used to assess an individual's likelihood of repaying a loan based on various factors such as credit history, income, etc.
+        <br> </p>
+        <a href="project3.html" class="read-more-btn">Read More</a>
+    </div>
+    
+    <!-- Second Row of Project Containers -->
+    <div class="project-container">
+      <img src="{{ url_for('static', filename='images/similar-images.jpg') }}" alt="Project 4">
+      <h3>Similar Images Finder</h3>
+      <p>Image similarity finding is a CV technique used to identify and measure the degree of similarity between two or more images. It's a fundamental task in various applications.</p>
+      <a href="project4.html" class="read-more-btn">Read More</a>
+    </div>
+    <div class="project-container">
+      <img src="{{ url_for('static', filename='images/recommender.jpg') }}" alt="Project 5">
+      <h3>Recommendation System</h3>
+      <p>Recommendation systems are algorithms that suggest items (e.g., products, movies, articles) to users based on their preferences or past behavior.</p>
+      <a href="project5.html" class="read-more-btn">Read More</a>
+    </div>
+    <div class="project-container">
+      <img src="{{ url_for('static', filename='images/chatbot.jpg') }}" alt="Project 6">
+      <h3>Chatbot Application</h3>
+      <p>Chatbots are programs designed to simulate human conversation through text or speech. They are used to interact with users in various ways</p>
+      <a href="project6.html" class="read-more-btn">Read More</a>
+    </div>
+  </section>
+</main>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Chandan Malakar</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/chandanmalakar">LinkedIn</a></li>
+      <li><a href="https://x.com/chandan6209">Twitter</a></li>
+      <li><a href="/contact" target="_blank" rel="noopener noreferrer">Contact</a></li>
+      <li>+91 6209141001</li>
+    </ul>
+  </footer>
+</body>
+</html>
