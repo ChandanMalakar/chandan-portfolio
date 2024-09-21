@@ -11,9 +11,14 @@
 <body>
     <nav>
         <div class="logo">My Portfolio</div>
-        <ul>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false" role="button" tabindex="0">
+            &#9776;
+        </div>
+        <ul id="nav-menu">
             <li><a href="/aboutme">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
         </ul>
     </nav>
 
@@ -31,10 +36,32 @@
                 <button type="submit">Sign Up</button>
             </form>
             <br>
-            <p>Already a member? <a href="/">Login here</a></p>
+            <p>Already a member? <a href="/login">Login here</a></p>
         </div>
     </div>
     
+    <!-- Include JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('open');
+
+            // Update ARIA attribute
+            const hamburger = document.querySelector('.hamburger');
+            const isOpen = navMenu.classList.contains('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        }
+
+        // Optional: Close menu when clicking outside
+        window.addEventListener('click', function(e) {
+            const navMenu = document.getElementById('nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', false);
+            }
+        });
+    </script>
     <script src="{{ url_for('static', filename='js/signup-animations.js') }}"></script>
 </body>
 </html>

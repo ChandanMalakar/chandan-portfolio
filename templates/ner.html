@@ -6,11 +6,13 @@
   <title>NER Page</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/ner.css') }}">
   <link rel="icon" href="{{ url_for('static', filename='images/2.png') }}" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
     <div class="logo">My Portfolio</div>
-    <ul>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <ul id="nav-menu">
       <li><a href="/profile">Home</a></li>
       <li><a href="/aboutme">About</a></li>
       <li><a href="/contact">Contact</a></li>
@@ -22,15 +24,23 @@
     <div class="ner-container">
       <h1>NER</h1>
       <p>Enter the text for NER analysis:</p>
-      <br>
       <textarea name="user_text" id="user_text" rows="10" placeholder="Enter your text here..."></textarea>
       <button type="submit">Analyze Text</button>
-      <div id="results"></div>  </div>
+      <div id="results"></div>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/natural@3.3.0/dist/natural.min.js"></script>  <script>
+  <!-- Include the Natural library (make sure it's properly linked in your project) -->
+  <script src="https://cdn.jsdelivr.net/npm/natural@3.3.0/dist/natural.min.js"></script>
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('open');
+    }
+
     document.querySelector('button').addEventListener('click', function() {
       const userText = document.getElementById('user_text').value;
+      // Tokenize the input text
       const tokenizer = new natural.WordTokenizer();
       const words = tokenizer.tokenize(userText);
 
@@ -48,8 +58,8 @@
 
     // Replace this with your actual NER logic
     function extractNamedEntities(words) {
-      // ... your NER implementation here ...
-      return ['person1', 'location1', 'organization1']; // Example results
+      // Placeholder for NER logic
+      return ['Person1', 'Location1', 'Organization1']; // Example results
     }
   </script>
 </body>
