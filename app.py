@@ -87,6 +87,3 @@ def logout():
     session.pop('user_email', None)  # Remove user ID from session
     return render_template('login.html', message='Successfully Logged Out', color='green')
 
-if __name__ == '__main__':
-    app.run(debug=True)
- 
