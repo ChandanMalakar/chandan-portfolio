@@ -5,6 +5,9 @@ app = Flask(__name__)
 app.secret_key = '1lkdf75gh49cm1603rm04'
 dbo = Database()
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
 with open('users.json', 'r') as f:
     user_data = json.load(f)
 
